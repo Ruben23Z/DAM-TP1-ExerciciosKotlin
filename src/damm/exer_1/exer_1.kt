@@ -1,20 +1,22 @@
 package damm.exer_1
 
 fun main() {
-    val numeros = IntArray(51)
+    val numeros = IntArray(50) //Cria array de 50 valores
 
     for (i in numeros.indices) {
-        numeros[i] = i * i
+        numeros[i] =
+            (i + 1) * (i + 1) // para canda indice faz o seu valor ser o indice multiplicado por ele mesmo, ou seja, o quadrado do indice
     }
 
-    println(numeros.joinToString(", "))
+    println(numeros.joinToString(", ")) //junta e imprime
     println("-------------------------------------------------------------")
 
-    val numeros2 = (0..50).map { it * it }
-    println(numeros2.joinToString(", "))
+    val numeros2 =
+        (1..50).map { it * it } //cria uma lista de 0 a 50 e para cada valor da lista, o valor é o valor multiplicado por ele mesmo através da função map
+    println(numeros2.joinToString(", "))//junta e imprime
     println("-------------------------------------------------------------")
 
-    val arr = IntArray(51)
-    for (i in 0 until numeros.size) arr[i] = i
-    println(arr.map { it * it }.joinToString(", "))
+    val arr =
+        Array(50) { (it + 1) * (it + 1) } //cria um array de 50 valores, onde cada valor é o indice multiplicado por ele mesmo, ou seja, o quadrado do indice
+    println(arr.joinToString(", "))
 }
